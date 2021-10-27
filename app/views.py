@@ -11,5 +11,6 @@ def movie(movie_id):
     '''
     View movie page function that returns the movie details page and its data.
     '''
-    message = "Hello Levy, you are doing pretty well in absorbng the content."
+    title = 'Home - Welcome to the best Movie Review Website Online'
+    
     return render_template('movie.html', id = movie_id)
