@@ -1,12 +1,15 @@
+#Views
+# 
 from flask import render_template
 from app import app
-#Views
+
 #render_template is a function
 
 
-@app.route('/')
-def index():
+@app.route('/movie/<int:movie_id>')
+def movie(movie_id):
     '''
-    View root page function that returns the index page and its data
+    View movie page function that returns the movie details page and its data.
     '''
-    return render_template('index.html')
+    message = "Hello Levy, you are doing pretty well in absorbng the content."
+    return render_template('movie.html', id = movie_id)
