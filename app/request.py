@@ -19,13 +19,13 @@ def get_movies(category): #function takes category as an argument
     get_movies_data = url.read()
     get_movies_response = json.loads(get_movies_data)
 
-    movie_result = None
+    movie_results = None
 
     if get_movies_response['results']:
       movie_result_list = get_movies_response['results']
-      movie_result = process_results(movie_result_list)
+      movie_results = process_results(movie_result_list)
 
-  return movie_result
+  return movie_results
 
 def process_results(movie_list):
   '''
@@ -48,6 +48,7 @@ def process_results(movie_list):
 
     if poster:
       movie_object = Movie(id, title, overview, poster, vote_average, vote_count)
+      movie_results.append(movie_object)
 
   return movie_results
       
